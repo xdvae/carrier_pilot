@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareerPilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><button class="brand" id="home" aria-label="CareerPilot home"><img src="logo.png" alt="" onerror="this.remove()"><b>CareerPilot</b></button><div class="steps" id="steps"><span>Upload</span><span>Questions</span><span>Results</span></div></header>
+<main>
+
+<section id="s1">
+  <div id="banner"></div>
+  <h1>Your resume,<br>made for this job.</h1>
+  <p class="lead">Upload your resume and the job details. We score the match, ask about what’s missing, and rewrite only what’s true.</p>
+  <label class="drop" id="drop"><input type="file" id="file" accept=".pdf,.docx,.txt"><b id="fname">Choose your resume</b><span>PDF, DOCX or text. Drop it here or click.</span></label>
+  <label>Or paste your resume</label>
+  <textarea id="rtext" placeholder="Paste resume text"></textarea>
+  <div class="row">
+    <div><label>Job title</label><input id="title" placeholder="Data Analyst"></div>
+    <div><label>Company</label><input id="company" placeholder="Company name"></div>
+  </div>
+  <label>Job description</label>
+  <textarea id="jd" placeholder="Paste the full job description"></textarea>
+  <div style="margin-top:32px"><button id="go">Analyze</button></div>
+  <div class="err" id="e1"></div>
+</section>
+
+<section id="sl" class="hidden">
+  <h1 id="lt" style="font-size:clamp(32px,5vw,44px)">Working on it</h1>
+  <p class="lm" id="lm"></p>
+  <div style="display:flex;gap:48px;margin-bottom:32px"><div class="sk" style="width:120px;height:52px"></div><div class="sk" style="width:120px;height:52px"></div><div class="sk" style="width:120px;height:52px"></div></div>
+  <div class="skrow"><i class="sk" style="width:8px;height:8px"></i><div class="sk" style="height:16px;width:70%"></div><div class="sk" style="height:14px"></div></div>
+  <div class="skrow"><i class="sk" style="width:8px;height:8px"></i><div class="sk" style="height:16px;width:55%"></div><div class="sk" style="height:14px"></div></div>
+  <div class="skrow"><i class="sk" style="width:8px;height:8px"></i><div class="sk" style="height:16px;width:80%"></div><div class="sk" style="height:14px"></div></div>
+  <div class="skrow"><i class="sk" style="width:8px;height:8px"></i><div class="sk" style="height:16px;width:62%"></div><div class="sk" style="height:14px"></div></div>
+  <div class="skrow"><i class="sk" style="width:8px;height:8px"></i><div class="sk" style="height:16px;width:74%"></div><div class="sk" style="height:14px"></div></div>
+</section>
+
+<section id="s2" class="hidden">
+  <div id="score"></div>
+  <h2 style="margin-top:56px">Tell us about your experience</h2>
+  <p class="mute" style="margin:0 0 24px">The job asks for these and your resume doesn’t show them. Only answer what’s true, and skip the rest.</p>
+  <div id="qs"></div>
+  <h2 style="margin-top:48px">Anything else?</h2>
+  <p class="mute" style="margin:0 0 8px">Things not on your resume help us write a stronger one.</p>
+  <div id="extra"></div>
+  <div style="margin-top:32px;display:flex;gap:12px"><button id="gen">Build my resume</button><button class="ghost" id="back">Back</button></div>
+</section>
+
+<section id="s3" class="hidden">
+  <div class="tabs">
+    <div class="seg" id="tabs">
+      <button data-t="t-match" class="on">Match</button><button data-t="t-resume">Resume</button>
+      <button data-t="t-learn">Courses</button><button data-t="t-int">Practice</button>
+    </div>
+    <button class="ghost" id="restart">Start over</button>
+  </div>
+  <div id="t-match"></div><div id="t-resume" class="hidden"></div>
+  <div id="t-learn" class="hidden"></div><div id="t-int" class="hidden"></div>
+</section>
+
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
