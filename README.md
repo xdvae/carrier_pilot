@@ -1,4 +1,4 @@
-j# CareerPilot
+CareerPilot
 
 Tailor your resume to a specific job without making anything up.
 
