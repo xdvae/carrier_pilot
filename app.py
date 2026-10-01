@@ -268,6 +268,10 @@ Coach this candidate like a kind, honest interviewer. Return JSON:
 "follow_up":str}}
 Max 3 strengths and 3 improvements, each one sentence.""", system="You are an interview coach. Reply with valid JSON only."))
 
+@app.route("/ping")
+def ping():
+    return "ok", 200
+
 @app.post("/api/pdf")
 def pdf():
     r = request.get_json()
